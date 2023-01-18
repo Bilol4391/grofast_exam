@@ -14,7 +14,6 @@ class ProductTour2 extends StatelessWidget {
               Image.asset("assets/Image-Header 16.36.48.png"),
               Container(
                 color: const Color(0xffF1F2F9),
-                height: 420,
                 width: 430,
                 child: Column(
                   children: [

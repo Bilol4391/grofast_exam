@@ -18,7 +18,7 @@ class WelcomePage extends StatelessWidget {
               );
             },
             child: SizedBox(
-              height: 932,
+              height: MediaQuery.of(context).size.height,
               width: 430,
               child: Image.asset(
                 "assets/welcome.png",

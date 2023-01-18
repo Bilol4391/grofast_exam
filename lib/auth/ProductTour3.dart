@@ -14,7 +14,6 @@ class ProductTour3 extends StatelessWidget {
               Image.asset("assets/human.png"),
               Container(
                 color: const Color(0xffF1F2F9),
-                height: 420,
                 width: 430,
                 child: Column(
                   children: [

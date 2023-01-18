@@ -14,9 +14,6 @@ class GetInfo {
         'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
       });
 
-      print(res.statusCode);
-      print(res.body);
-
       return foodModelFromJson(res.body);
     } catch (e) {
       print('error: $e');
