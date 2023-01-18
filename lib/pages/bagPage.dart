@@ -16,7 +16,7 @@ class _BagPageState extends State<BagPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
+          GestureDetector(
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(builder: (_) => const MainHomePage()),

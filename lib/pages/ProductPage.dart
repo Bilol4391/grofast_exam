@@ -219,7 +219,6 @@ class _ProductPageState extends State<ProductPage> {
                 onTap: (){
                   buyCount ++;
                   setState(() {
-
                   });
                 },
                 child: Container(
