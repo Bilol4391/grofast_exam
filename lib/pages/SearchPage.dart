@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/Widget/network_image.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
 import 'package:my_first_portfolio/model/food_model.dart';
-import 'package:my_first_portfolio/pages/MainHomePage.dart';
 import 'package:my_first_portfolio/pages/ProductPage.dart';
 
 import 'package:my_first_portfolio/repository/get_info.dart';
@@ -27,6 +26,7 @@ class _SearchPageState extends State<SearchPage> {
   //   print("\n\n\n\nHELLOOOOO $infos\n\n\n\n");
   //   isLoading = false;
   // }
+
   String change = "";
   bool isEmpty = true;
 
@@ -110,7 +110,6 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                 ],
               ),
-              
               FutureBuilder(
                 future: GetInfo.getInformation(text: change),
                 builder: (ctx, AsyncSnapshot<FoodModel?> snapshot) {
