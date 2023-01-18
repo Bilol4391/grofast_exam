@@ -110,6 +110,7 @@ class _SearchPageState extends State<SearchPage> {
                   ),
                 ],
               ),
+              
               FutureBuilder(
                 future: GetInfo.getInformation(text: change),
                 builder: (ctx, AsyncSnapshot<FoodModel?> snapshot) {
