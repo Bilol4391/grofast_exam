@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
+          GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
@@ -188,8 +188,9 @@ class _LoginPageState extends State<LoginPage> {
                 )
               : const SizedBox.shrink(),
           InkWell(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const ForgotPassword()));
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const ForgotPassword()));
             },
             child: const Padding(
               padding: EdgeInsets.only(left: 305),
@@ -205,8 +206,11 @@ class _LoginPageState extends State<LoginPage> {
           InkWell(
             onTap: () {
               if (email.text.isNotEmpty && password.text.isNotEmpty) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const RegisterVerify(email: 'bilolabdunazarov8480@gmail.com')));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => const RegisterVerify(
+                            email: 'bilolabdunazarov8480@gmail.com')));
               } else if (email.text.isEmpty && password.text.isEmpty) {
                 isEmailEmpty = true;
                 isPasswordEmpty = true;
@@ -223,17 +227,22 @@ class _LoginPageState extends State<LoginPage> {
               height: 70,
               width: 400,
               decoration: const BoxDecoration(
-                color: Color(0xff324A59),
-                borderRadius: BorderRadius.all(Radius.circular(20)),
-                gradient: LinearGradient(colors: [Color(0xff32CB4B), Color(0xff26AD71)],begin: Alignment.topCenter, end: Alignment.bottomCenter)
-              ),
-              margin: const EdgeInsets.only(
-                left: 25, right: 25, top: 50
-              ),
-              child: const Center(child: Text("Sign in",style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 17, color: Colors.white,
-              ),)),
+                  color: Color(0xff324A59),
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  gradient: LinearGradient(
+                      colors: [Color(0xff32CB4B), Color(0xff26AD71)],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter)),
+              margin: const EdgeInsets.only(left: 25, right: 25, top: 50),
+              child: const Center(
+                  child: Text(
+                "Sign in",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17,
+                  color: Colors.white,
+                ),
+              )),
             ),
           ),
           const SizedBox(
@@ -307,8 +316,9 @@ class _LoginPageState extends State<LoginPage> {
                         fontSize: 14, color: Colors.grey, letterSpacing: .5),
                   )),
               InkWell(
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const Register(email: '')));
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (_) => const Register(email: '')));
                 },
                 child: const Padding(
                     padding: EdgeInsets.only(left: 6),

@@ -27,7 +27,7 @@ class _RegisterState extends State<Register> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
+          GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
@@ -57,7 +57,6 @@ class _RegisterState extends State<Register> {
               ),
             ),
           ),
-
           const SizedBox(
             height: 10,
           ),
@@ -109,15 +108,16 @@ class _RegisterState extends State<Register> {
           ),
           isNameEmpty
               ? const Padding(
-            padding: EdgeInsets.only(left: 40, top: 0),
-            child: Text(
-              "Name is Required!",
-              style: TextStyle(color: Colors.red),
-            ),
-          )
+                  padding: EdgeInsets.only(left: 40, top: 0),
+                  child: Text(
+                    "Name is Required!",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                )
               : const SizedBox.shrink(),
-
-          const SizedBox(height: 10,),
+          const SizedBox(
+            height: 10,
+          ),
           const Padding(
             padding: EdgeInsets.only(left: 20),
             child: Text(
@@ -166,15 +166,13 @@ class _RegisterState extends State<Register> {
           ),
           isEmailEmpty
               ? const Padding(
-            padding: EdgeInsets.only(left: 40, top: 0),
-            child: Text(
-              "Email address is requirment",
-              style: TextStyle(color: Colors.red),
-            ),
-          )
+                  padding: EdgeInsets.only(left: 40, top: 0),
+                  child: Text(
+                    "Email address is requirment",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                )
               : const SizedBox.shrink(),
-
-
           const SizedBox(
             height: 15,
           ),
@@ -243,17 +241,17 @@ class _RegisterState extends State<Register> {
           ),
           isPasswordEmpty
               ? const Padding(
-            padding: EdgeInsets.only(left: 40, top: 2),
-            child: Text(
-              "Password is requirment",
-              style: TextStyle(color: Colors.red),
-            ),
-          )
+                  padding: EdgeInsets.only(left: 40, top: 2),
+                  child: Text(
+                    "Password is requirment",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                )
               : const SizedBox.shrink(),
-
           InkWell(
-            onTap: (){
-              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const ForgotPassword()));
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const ForgotPassword()));
             },
             child: const Padding(
               padding: EdgeInsets.only(left: 305, bottom: 0),
@@ -268,10 +266,18 @@ class _RegisterState extends State<Register> {
           ),
           InkWell(
             onTap: () {
-              if (name.text.isNotEmpty && email.text.isNotEmpty && password.text.isNotEmpty) {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => RegisterVerify(email: widget.email,)));
-              } else if (name.text.isEmpty && email.text.isEmpty && password.text.isEmpty) {
+              if (name.text.isNotEmpty &&
+                  email.text.isNotEmpty &&
+                  password.text.isNotEmpty) {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (_) => RegisterVerify(
+                              email: widget.email,
+                            )));
+              } else if (name.text.isEmpty &&
+                  email.text.isEmpty &&
+                  password.text.isEmpty) {
                 isNameEmpty = true;
                 isEmailEmpty = true;
                 isPasswordEmpty = true;
@@ -293,15 +299,20 @@ class _RegisterState extends State<Register> {
               decoration: const BoxDecoration(
                   color: Color(0xff324A59),
                   borderRadius: BorderRadius.all(Radius.circular(20)),
-                  gradient: LinearGradient(colors: [Color(0xff32CB4B), Color(0xff26AD71)],begin: Alignment.topCenter, end: Alignment.bottomCenter)
-              ),
-              margin: const EdgeInsets.only(
-                  left: 25, right: 25, top: 30
-              ),
-              child: const Center(child: Text("Sign up",style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 17, color: Colors.white,
-              ),)),
+                  gradient: LinearGradient(
+                      colors: [Color(0xff32CB4B), Color(0xff26AD71)],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter)),
+              margin: const EdgeInsets.only(left: 25, right: 25, top: 30),
+              child: const Center(
+                  child: Text(
+                "Sign up",
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 17,
+                  color: Colors.white,
+                ),
+              )),
             ),
           ),
           const SizedBox(
@@ -309,12 +320,12 @@ class _RegisterState extends State<Register> {
           ),
           const Center(
               child: Text(
-                "or with",
-                style: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 14,
-                    color: Color(0xff4B4B4B)),
-              )),
+            "or with",
+            style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 14,
+                color: Color(0xff4B4B4B)),
+          )),
           Row(
             children: [
               Container(
@@ -375,8 +386,9 @@ class _RegisterState extends State<Register> {
                         fontSize: 14, color: Colors.grey, letterSpacing: .5),
                   )),
               InkWell(
-                onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const LoginPage()));
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const LoginPage()));
                 },
                 child: const Padding(
                     padding: EdgeInsets.only(left: 6),

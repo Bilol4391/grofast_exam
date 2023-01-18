@@ -19,7 +19,7 @@ class GetInfo {
 
       return foodModelFromJson(res.body);
     } catch (e) {
-      print(e);
+      print('error: $e');
     }
     return null;
   }

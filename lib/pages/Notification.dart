@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/Widget/PastCanceled.dart';
-import 'package:my_first_portfolio/Widget/PastContainer.dart';
+import 'package:my_first_portfolio/Widget/pastContainer.dart';
 import 'package:my_first_portfolio/Widget/nowContainer.dart';
 
 class NotificationPage extends StatefulWidget {
@@ -29,7 +29,8 @@ class _NotificationPageState extends State<NotificationPage> {
                   height: 50,
                   margin: const EdgeInsets.only(left: 20, top: 60),
                   decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.all(Radius.circular(100)),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(100)),
                       border: Border.all(
                           color: const Color(0xff777777).withOpacity(0.2))),
                   child: const Icon(
@@ -62,8 +63,8 @@ class _NotificationPageState extends State<NotificationPage> {
                 filled: true,
                 suffixIcon: Container(
                     margin: const EdgeInsets.only(right: 10),
-                    child:
-                        const Icon(Icons.search_rounded, color: Color(0xff4CBB5E))),
+                    child: const Icon(Icons.search_rounded,
+                        color: Color(0xff4CBB5E))),
                 hintText: "Search fresh groceries",
                 hintStyle: GoogleFonts.raleway(
                     fontWeight: FontWeight.w400,
@@ -72,18 +73,18 @@ class _NotificationPageState extends State<NotificationPage> {
                 fillColor: const Color(0xff194B38).withOpacity(0.06),
                 border: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
-                  borderSide:
-                      BorderSide(color: const Color(0xff194B38).withOpacity(0.06)),
+                  borderSide: BorderSide(
+                      color: const Color(0xff194B38).withOpacity(0.06)),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
-                  borderSide:
-                      BorderSide(color: const Color(0xff194B38).withOpacity(0.06)),
+                  borderSide: BorderSide(
+                      color: const Color(0xff194B38).withOpacity(0.06)),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: const BorderRadius.all(Radius.circular(20)),
-                  borderSide:
-                      BorderSide(color: const Color(0xff194B38).withOpacity(0.06)),
+                  borderSide: BorderSide(
+                      color: const Color(0xff194B38).withOpacity(0.06)),
                 ),
               ),
             ),
@@ -104,7 +105,8 @@ class _NotificationPageState extends State<NotificationPage> {
                           child: TabBar(
                             isScrollable: true,
                             indicator: BoxDecoration(
-                                border: Border.all(color: const Color(0xff2AAF7F)),
+                                border:
+                                    Border.all(color: const Color(0xff2AAF7F)),
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(50)),
                                 color: const Color(0xffEBF4F1)),

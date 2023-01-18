@@ -23,7 +23,7 @@ class _NewPasswordState extends State<NewPassword> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
+          GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },

@@ -26,7 +26,7 @@ class _RegisterVerifyState extends State<RegisterVerify> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          InkWell(
+          GestureDetector(
             onTap: () {
               Navigator.pop(context);
             },
@@ -91,8 +91,14 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 margin: const EdgeInsets.only(left: 45, top: 25),
-                child: const Center(child: Text("1", style: TextStyle(color: Colors.grey, fontSize: 30, fontWeight: FontWeight.w800),)),
-
+                child: const Center(
+                    child: Text(
+                  "1",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800),
+                )),
               ),
               Container(
                 height: 70,
@@ -102,8 +108,14 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 margin: const EdgeInsets.only(left: 15, top: 25),
-                child: const Center(child: Text("6", style: TextStyle(color: Colors.grey, fontSize: 30, fontWeight: FontWeight.w800),)),
-
+                child: const Center(
+                    child: Text(
+                  "6",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800),
+                )),
               ),
               Container(
                 height: 70,
@@ -113,7 +125,14 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 margin: const EdgeInsets.only(left: 15, top: 25),
-                child: const Center(child: Text("1", style: TextStyle(color: Colors.grey, fontSize: 30, fontWeight: FontWeight.w800),)),
+                child: const Center(
+                    child: Text(
+                  "1",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800),
+                )),
               ),
               Container(
                 height: 70,
@@ -123,7 +142,14 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                 ),
                 margin: const EdgeInsets.only(left: 15, top: 25),
-                child: const Center(child: Text("3", style: TextStyle(color: Colors.grey, fontSize: 30, fontWeight: FontWeight.w800),)),
+                child: const Center(
+                    child: Text(
+                  "3",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w800),
+                )),
               ),
             ],
           ),
@@ -139,19 +165,19 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                     style: TextStyle(
                         fontSize: 14, color: Colors.grey, letterSpacing: .5),
                   )),
-               Padding(
-                    padding: EdgeInsets.only(left: 6),
-                    child: Text(
-                      "Resend code",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xff4CBB5E),
-                          letterSpacing: .5),
-                    )),
+              Padding(
+                  padding: EdgeInsets.only(left: 6),
+                  child: Text(
+                    "Resend code",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xff4CBB5E),
+                        letterSpacing: .5),
+                  )),
             ],
           ),
-          InkWell(
+          GestureDetector(
             onTap: () {
               if (email.text.isNotEmpty && password.text.isNotEmpty) {
                 Navigator.push(context,
@@ -168,51 +194,71 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                 setState(() {});
               }
             },
-            child: InkWell(
-              onTap: (){
-                showModalBottomSheet(context: context, builder: (context){
-                  return SizedBox(
-                    height: 450,
-                    child: Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(top: 30),
-                          child: Image.asset("assets/Check.png"),
-                        ),
-                        const SizedBox(height: 20,),
-                        const Text("Success!", style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.w700,
-                          color: Color(0xff4B4B4B),
-                        ),),
-                        const SizedBox(height: 14,),
-                        const SizedBox(
-                          height: 43,
-                          width: 234,
-                          child: Text("You have successfully created your account.", textAlign: TextAlign.center ,style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                            color: Color(0xff9C9C9C),
-                            height: 1.6
-                          ),),
-                        ),
-                        InkWell(
-                          onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const MainHomePage()));
-                          }
-                          ,child: Container(
-                            height: 70,
-                            width: 400,
-                            decoration: const BoxDecoration(
-                                color: Color(0xff324A59),
-                                borderRadius: BorderRadius.all(Radius.circular(20)),
-                                gradient: LinearGradient(
-                                    colors: [Color(0xff32CB4B), Color(0xff26AD71)],
-                                    begin: Alignment.topCenter,
-                                    end: Alignment.bottomCenter)),
-                            margin: const EdgeInsets.only(left: 25, right: 25, top: 50),
-                            child: const Center(
-                                child: Text(
+            child: GestureDetector(
+              onTap: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SizedBox(
+                        height: 450,
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(top: 30),
+                              child: Image.asset("assets/Check.png"),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            const Text(
+                              "Success!",
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xff4B4B4B),
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 14,
+                            ),
+                            const SizedBox(
+                              height: 43,
+                              width: 234,
+                              child: Text(
+                                "You have successfully created your account.",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 14,
+                                    color: Color(0xff9C9C9C),
+                                    height: 1.6),
+                              ),
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushAndRemoveUntil(
+                                    MaterialPageRoute(
+                                        builder: (_) => const MainHomePage()),
+                                    (route) => true);
+                              },
+                              child: Container(
+                                height: 70,
+                                width: 400,
+                                decoration: const BoxDecoration(
+                                    color: Color(0xff324A59),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20)),
+                                    gradient: LinearGradient(
+                                        colors: [
+                                          Color(0xff32CB4B),
+                                          Color(0xff26AD71)
+                                        ],
+                                        begin: Alignment.topCenter,
+                                        end: Alignment.bottomCenter)),
+                                margin: const EdgeInsets.only(
+                                    left: 25, right: 25, top: 50),
+                                child: const Center(
+                                    child: Text(
                                   "Browse home",
                                   style: TextStyle(
                                     fontWeight: FontWeight.w600,
@@ -220,12 +266,12 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                                     color: Colors.white,
                                   ),
                                 )),
-                          ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  );
-                });
+                      );
+                    });
               },
               child: Container(
                 height: 70,
@@ -242,9 +288,9 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                     child: Text(
                   "Vertification",
                   style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 17,
-                color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 17,
+                    color: Colors.white,
                   ),
                 )),
               ),
@@ -266,8 +312,8 @@ class _RegisterVerifyState extends State<RegisterVerify> {
           ),
           InkWell(
             onTap: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => const TermCondition()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (_) => const TermCondition()));
             },
             child: const Padding(
                 padding: EdgeInsets.only(left: 6),
