@@ -19,7 +19,7 @@ class DiscountPage extends StatelessWidget {
         children: [
           Row(
             children: [
-              InkWell(
+              GestureDetector(
                 onTap: (){
                   Navigator.pop(context);
                 }, child: Container(

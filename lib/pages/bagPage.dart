@@ -16,25 +16,18 @@ class _BagPageState extends State<BagPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => const MainHomePage()),
-              );
-            },
-            child: Container(
-              width: 80,
-              height: 50,
-              margin: const EdgeInsets.only(left: 20, top: 60),
-              decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.all(Radius.circular(100)),
-                  border: Border.all(
-                      color: const Color(0xff777777).withOpacity(0.2))),
-              child: const Icon(
-                Icons.arrow_back,
-                color: Color(0xff777777),
-              ),
-            ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                'Bag Page',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700),
+              )
+            ],
           ),
           const SizedBox(height: 35),
           Row(

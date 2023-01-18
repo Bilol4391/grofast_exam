@@ -62,7 +62,7 @@ class _CategoryHorizontalState extends State<CategoryHorizontal> {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              InkWell(
+              GestureDetector(
                 onTap: (){
                   Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const MainHomePage()));
                 }, child: Container(

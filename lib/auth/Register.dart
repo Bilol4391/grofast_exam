@@ -3,6 +3,7 @@ import 'package:my_first_portfolio/Widget/on_nfocused.dart';
 import 'package:my_first_portfolio/auth/ForgotPassword.dart';
 import 'package:my_first_portfolio/auth/LoginPage.dart';
 import 'package:my_first_portfolio/auth/RegisterVerify.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
   final String email;
@@ -277,16 +278,21 @@ class _RegisterState extends State<Register> {
                 ),
               ),
               GestureDetector(
-                onTap: () {
+                onTap: () async {
                   if (name.text.isNotEmpty &&
                       email.text.isNotEmpty &&
                       password.text.isNotEmpty) {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => RegisterVerify(
-                                  email: widget.email,
-                                )));
+                    SharedPreferences _store =
+                        await SharedPreferences.getInstance();
+                    _store.setString('nickname', name.text);
+
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const RegisterVerify(
+                          email: '',
+                        ),
+                      ),
+                    );
                   } else if (name.text.isEmpty &&
                       email.text.isEmpty &&
                       password.text.isEmpty) {

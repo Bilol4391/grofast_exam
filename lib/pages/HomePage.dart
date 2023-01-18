@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
 import 'package:my_first_portfolio/Widget/popular_products.dart';
 import 'package:my_first_portfolio/pages/Notification.dart';
-import 'package:my_first_portfolio/repository/get_info.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,6 +14,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isSelect = false;
+  String name = '';
+
+  Future<void> getName() async {
+    SharedPreferences _local = await SharedPreferences.getInstance();
+    name = _local.getString('nickname') ?? 'salom';
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    getName();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -349,7 +362,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         margin: const EdgeInsets.only(left: 20),
                         child: Text(
-                          "Hey Yona 👋",
+                          "Hey $name 👋",
                           style: GoogleFonts.raleway(
                               fontWeight: FontWeight.w900,
                               fontSize: 28,

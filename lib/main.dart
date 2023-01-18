@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_first_portfolio/pages/welcomePage.dart';
+import 'package:my_first_portfolio/auth/welcomePage.dart';
 
 void main() {
   runApp(const MainFile());
