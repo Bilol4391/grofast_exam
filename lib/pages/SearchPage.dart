@@ -129,14 +129,7 @@ class _SearchPageState extends State<SearchPage> {
               if (!snapshot.hasData) {
                 return const Center(
                     child: CircularProgressIndicator.adaptive());
-              } else if (snapshot.hasError) {
-                return Center(
-                  child: Text(
-                    '${snapshot.error} occurred',
-                    style: const TextStyle(fontSize: 18),
-                  ),
-                );
-              } else if (change.isEmpty) {
+              } else if (snapshot.data?.count == 0) {
                 return Column(
                   children: [
                     Center(
@@ -150,7 +143,7 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         child: Center(
                             child: Text(
-                          "😥",
+                          "🤷🏻‍♂",
                           style: GoogleFonts.raleway(
                               fontWeight: FontWeight.w700, fontSize: 30),
                         )),
@@ -161,7 +154,7 @@ class _SearchPageState extends State<SearchPage> {
                     ),
                     Center(
                         child: Text(
-                      "No searches yet",
+                      "No this type of product",
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.w800,
                           fontSize: 22,
@@ -246,7 +239,7 @@ class _SearchPageState extends State<SearchPage> {
                       }),
                 );
               }
-              return SizedBox();
+              return const SizedBox();
             },
           ),
         ],

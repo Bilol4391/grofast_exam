@@ -310,23 +310,27 @@ class _RegisterVerifyState extends State<RegisterVerify> {
           const SizedBox(
             height: 12,
           ),
-          InkWell(
-            onTap: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (_) => const TermCondition()));
-            },
-            child: const Padding(
-                padding: EdgeInsets.only(left: 6),
-                child: Center(
-                  child: Text(
-                    "Term and Conditions",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700,
-                        color: Color(0xff4CBB5E),
-                        letterSpacing: .5),
+          Padding(
+            padding: const EdgeInsets.only(left: 6),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const TermCondition(),
                   ),
-                )),
+                );
+              },
+              child: const Center(
+                child: Text(
+                  "Term and Conditions",
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff4CBB5E),
+                      letterSpacing: .5),
+                ),
+              ),
+            ),
           )
         ],
       ),

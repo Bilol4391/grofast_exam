@@ -103,7 +103,7 @@ class _GrdVievState extends State<GrdViev> {
                       color: const Color(0xff194B38)),
                 ),
               ),
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => const CategoryHorizontal()));

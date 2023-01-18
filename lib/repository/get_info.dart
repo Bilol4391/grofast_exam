@@ -10,7 +10,7 @@ class GetInfo {
       final url = Uri.parse(
           "https://edamam-recipe-search.p.rapidapi.com/search?q=$text");
       final res = await http.get(url, headers: {
-        'X-RapidAPI-Key': 'c0c7e90f22msh58e90645143bb07p175cbcjsn21fd2a2197df',
+        'X-RapidAPI-Key': '2c840ef8e5msh707233cec7e192fp145d49jsn4e1bee476466',
         'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
       });
 

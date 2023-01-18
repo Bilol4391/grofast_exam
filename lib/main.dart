@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/auth/pageViewControl.dart';
+import 'package:my_first_portfolio/pages/welcomePage.dart';
 
 void main() {
   runApp(const MainFile());
@@ -12,7 +13,7 @@ class MainFile extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PageViev(),
+      home: WelcomePage(),
     );
   }
 }
