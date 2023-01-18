@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_portfolio/auth/pageViewControl.dart';
 import 'package:my_first_portfolio/pages/welcomePage.dart';
 
 void main() {

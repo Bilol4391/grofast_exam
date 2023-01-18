@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/model/food_model.dart';
 import 'package:my_first_portfolio/pages/MainHomePage.dart';
+import 'package:my_first_portfolio/pages/ProductPage.dart';
 
 import 'package:my_first_portfolio/repository/get_info.dart';
 
@@ -185,52 +186,65 @@ class _SearchPageState extends State<SearchPage> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: Container(
-                                height: 120,
-                                width: double.infinity,
-                                decoration: const BoxDecoration(
-                                    color: Color(0xffF1F4F3),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(24))),
-                                margin:
-                                    const EdgeInsets.only(left: 10, right: 12),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          top: 10, left: 15),
-                                      child: ClipRRect(
-                                        borderRadius: const BorderRadius.all(
-                                            Radius.circular(24)),
-                                        child: Image.network(
-                                          snapshot.data!.hits![index]!.recipe!
-                                              .image!,
-                                          height: 100,
-                                          width: 100,
-                                          fit: BoxFit.cover,
-                                        ),
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (a) => ProductPage(
+                                        info: snapshot.data,
+                                        index: index,
                                       ),
                                     ),
-                                    SizedBox(
-                                      width: 200,
-                                      child: Container(
-                                        margin: const EdgeInsets.only(
-                                            left: 30, top: 22),
-                                        child: Text(
-                                          snapshot.data?.hits?[index]?.recipe
-                                                  ?.label ??
-                                              '',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: GoogleFonts.raleway(
-                                              color: const Color(0xff194B38),
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: 15),
+                                  );
+                                },
+                                child: Container(
+                                  height: 120,
+                                  width: double.infinity,
+                                  decoration: const BoxDecoration(
+                                      color: Color(0xffF1F4F3),
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(24))),
+                                  margin: const EdgeInsets.only(
+                                      left: 10, right: 12),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                            top: 10, left: 15),
+                                        child: ClipRRect(
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(24)),
+                                          child: Image.network(
+                                            snapshot.data!.hits![index]!.recipe!
+                                                .image!,
+                                            height: 100,
+                                            width: 100,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                      SizedBox(
+                                        width: 200,
+                                        child: Container(
+                                          margin: const EdgeInsets.only(
+                                              left: 30, top: 22),
+                                          child: Text(
+                                            snapshot.data?.hits?[index]?.recipe
+                                                    ?.label ??
+                                                '',
+                                            overflow: TextOverflow.ellipsis,
+                                            style: GoogleFonts.raleway(
+                                                color: const Color(0xff194B38),
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 15),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),

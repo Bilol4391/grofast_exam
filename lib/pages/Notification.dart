@@ -20,7 +20,7 @@ class _NotificationPageState extends State<NotificationPage> {
         children: [
           Row(
             children: [
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
                 },

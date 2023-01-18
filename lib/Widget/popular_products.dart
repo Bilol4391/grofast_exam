@@ -89,6 +89,7 @@ class _GrdVievState extends State<GrdViev> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 15),
           Row(
