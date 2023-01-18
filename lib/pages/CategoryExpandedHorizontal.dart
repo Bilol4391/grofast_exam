@@ -64,7 +64,7 @@ class _CategoryHorizontalState extends State<CategoryHorizontal> {
             children: [
               InkWell(
                 onTap: (){
-                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>MainHomePage()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const MainHomePage()));
                 }, child: Container(
                 width: 80,
                 height: 50,
@@ -186,7 +186,7 @@ class _CategoryHorizontalState extends State<CategoryHorizontal> {
                       itemBuilder: (BuildContext context, int index) {
                         return GestureDetector(
                           onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (_)=>SearchPage()));
+                            Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const SearchPage()));
                           },
                           child: Container(
                             // margin: EdgeInsets.only(left: 22, right: 22),
@@ -237,7 +237,7 @@ class _CategoryHorizontalState extends State<CategoryHorizontal> {
                         itemBuilder: (BuildContext context, int index) {
                           return GestureDetector(
                             onTap: (){
-                              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>SearchPage()));
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const SearchPage()));
                             },
                             child: Container(
                               // margin: EdgeInsets.only(left: 22, right: 22),

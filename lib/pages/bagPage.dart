@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/pages/MainHomePage.dart';
 
 class BagPage extends StatefulWidget {
-  BagPage({Key? key}) : super(key: key);
+  const BagPage({Key? key}) : super(key: key);
 
   @override
   State<BagPage> createState() => _BagPageState();

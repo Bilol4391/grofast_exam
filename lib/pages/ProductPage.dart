@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_portfolio/Widget/network_image.dart';
 import 'package:my_first_portfolio/model/food_model.dart';
 import 'package:my_first_portfolio/pages/addToBag.dart';
 
@@ -29,16 +30,10 @@ class _ProductPageState extends State<ProductPage> {
         children: [
           Stack(
             children: [
-              Container(
-                height: 500,
-                width: double.infinity,
-                margin: const EdgeInsets.only(top: 0),
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            widget.info!.hits![widget.index]!.recipe!.image!),
-                        fit: BoxFit.fill)),
-              ),
+              CustomImageNetwork(
+                  height: 500,
+                  width: double.infinity,
+                  image: widget.info!.hits![widget.index]!.recipe!.image!),
               Positioned(
                 child: GestureDetector(
                   onTap: () {
@@ -54,7 +49,7 @@ class _ProductPageState extends State<ProductPage> {
                         border: Border.all(
                           color: const Color(0xff26AD71),
                         ),
-                        color: Color(0xff26AD71).withOpacity(0.3)),
+                        color: const Color(0xff26AD71).withOpacity(0.3)),
                     child: const Icon(
                       Icons.arrow_back,
                       color: Color(0xffFFFFFF),
@@ -71,7 +66,7 @@ class _ProductPageState extends State<ProductPage> {
                   margin: const EdgeInsets.only(left: 22, top: 20),
                   width: 30,
                   height: 20,
-                  child: Icon(Icons.shopping_bag)),
+                  child: const Icon(Icons.shopping_bag)),
               Container(
                 margin: const EdgeInsets.only(left: 5, top: 22),
                 child: Text(

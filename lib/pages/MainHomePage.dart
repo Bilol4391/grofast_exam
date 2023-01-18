@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/pages/bagPage.dart';
 import 'package:my_first_portfolio/pages/HomePage.dart';
 import 'package:my_first_portfolio/pages/ProfilePage.dart';
+import 'package:proste_indexed_stack/proste_indexed_stack.dart';
 import 'package:my_first_portfolio/pages/SearchPage.dart';
 
 class MainHomePage extends StatefulWidget {
@@ -16,21 +17,27 @@ class _MainHomePageState extends State<MainHomePage> {
   @override
 
   // ignore: override_on_non_overriding_member
-  List listOfPages = [
-    const HomePage(),
-    const SearchPage(),
-    BagPage(),
-    const ProfilePage(),
+
+  List<IndexedStackChild> list = [
+    IndexedStackChild(child: const HomePage()),
+    IndexedStackChild(child: const SearchPage()),
+    IndexedStackChild(child: const BagPage()),
+    IndexedStackChild(child: const ProfilePage(), preload: true)
   ];
 
-  int _page = 0;
+
+  int selectIndex = 0;
 
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: listOfPages[_page],
+      body: ProsteIndexedStack(
+        index: selectIndex,
+        // najot talim
+        children: list,
+      ),
       bottomNavigationBar: SizedBox(
         child: CurvedNavigationBar(
           key: _bottomNavigationKey,
@@ -54,7 +61,7 @@ class _MainHomePageState extends State<MainHomePage> {
           animationDuration: const Duration(milliseconds: 600),
           onTap: (index) {
             setState(() {
-              _page = index;
+              selectIndex = index;
             });
           },
           letIndexChange: (index) => true,
