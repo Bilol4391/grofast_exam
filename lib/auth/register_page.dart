@@ -406,7 +406,7 @@ class _RegisterState extends State<Register> {
                             color: Colors.grey,
                             letterSpacing: .5),
                       )),
-                  InkWell(
+                  GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(
                           MaterialPageRoute(builder: (_) => const LoginPage()));

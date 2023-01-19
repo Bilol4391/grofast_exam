@@ -200,10 +200,13 @@ class _LoginPageState extends State<LoginPage> {
                 onTap: () {
                   if (email.text.isNotEmpty && password.text.isNotEmpty) {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const RegisterVerify(
-                                email: 'bilolabdunazarov8480@gmail.com')));
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => RegisterVerify(
+                          email: '$email',
+                        ),
+                      ),
+                    );
                   } else if (email.text.isEmpty && password.text.isEmpty) {
                     isEmailEmpty = true;
                     isPasswordEmpty = true;

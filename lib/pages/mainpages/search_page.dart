@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_portfolio/Widget/duration.dart';
 import 'package:my_first_portfolio/Widget/network_image.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
+import 'package:my_first_portfolio/local/local_store.dart';
 import 'package:my_first_portfolio/model/food_model.dart';
 import 'package:my_first_portfolio/pages/product_page.dart';
 
@@ -15,20 +17,21 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  // bool isChanged = false;
-  // bool isLoading = true;
-  // FoodModel? infos;
-  // List<FoodModel?> products = [];
-
-  // Future<void> getInfors() async {
-  //   isLoading = true;
-  //   infos = await GetInfo.getInformation(text: 'pizza');
-  //   print("\n\n\n\nHELLOOOOO $infos\n\n\n\n");
-  //   isLoading = false;
-  // }
-
-  String change = "";
+  TextEditingController change = TextEditingController();
   bool isEmpty = true;
+  List<String> listOfSearch = [];
+  final _delayed = Delayd(milliseconds: 700);
+
+  getSearchHistory() async {
+    listOfSearch = await LocalStore.getSearch();
+  }
+
+  @override
+  void initState() {
+    getSearchHistory();
+    print(listOfSearch);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,9 +47,10 @@ class _SearchPageState extends State<SearchPage> {
                   Text(
                     'Search Page',
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w700),
+                      color: Colors.black,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    ),
                   )
                 ],
               ),
@@ -57,9 +61,14 @@ class _SearchPageState extends State<SearchPage> {
                     margin: const EdgeInsets.only(top: 35, left: 20, right: 20),
                     child: TextFormField(
                       maxLines: 1,
+                      controller: change,
                       onChanged: (value) {
-                        change = value;
-                        setState(() {});
+                        _delayed.run(
+                          () {
+                            print(change);
+                            setState(() {});
+                          },
+                        );
                       },
                       style: GoogleFonts.raleway(
                           fontWeight: FontWeight.w400,
@@ -67,6 +76,19 @@ class _SearchPageState extends State<SearchPage> {
                           letterSpacing: 0.7,
                           color: const Color(0xff194B38)),
                       decoration: InputDecoration(
+                        suffix: change.text.isEmpty
+                            ? const SizedBox.shrink()
+                            : InkWell(
+                                child: const Icon(
+                                  Icons.close,
+                                  size: 16,
+                                  color: Colors.black,
+                                ),
+                                onTap: () {
+                                  change.text = "";
+                                  setState(() {});
+                                },
+                              ),
                         filled: true,
                         prefixIcon: const Icon(Icons.search_rounded,
                             color: Color(0xff4CBB5E)),
@@ -112,7 +134,7 @@ class _SearchPageState extends State<SearchPage> {
                 ],
               ),
               FutureBuilder(
-                future: GetInfo.getInformation(text: change),
+                future: GetInfo.getInformation(text: change.text),
                 builder: (ctx, AsyncSnapshot<FoodModel?> snapshot) {
                   if (!snapshot.hasData) {
                     return const Center(
