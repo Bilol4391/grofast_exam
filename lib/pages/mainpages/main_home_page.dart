@@ -1,10 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:my_first_portfolio/pages/bagPage.dart';
-import 'package:my_first_portfolio/pages/HomePage.dart';
-import 'package:my_first_portfolio/pages/ProfilePage.dart';
+import 'package:my_first_portfolio/pages/mainpages/bag_page.dart';
+import 'package:my_first_portfolio/pages/mainpages/home_page.dart';
+import 'package:my_first_portfolio/pages/mainpages/profile_page.dart';
 import 'package:proste_indexed_stack/proste_indexed_stack.dart';
-import 'package:my_first_portfolio/pages/SearchPage.dart';
+import 'package:my_first_portfolio/pages/mainpages/search_page.dart';
 
 class MainHomePage extends StatefulWidget {
   const MainHomePage({Key? key}) : super(key: key);
@@ -14,8 +14,6 @@ class MainHomePage extends StatefulWidget {
 }
 
 class _MainHomePageState extends State<MainHomePage> {
-  @override
-
   // ignore: override_on_non_overriding_member
 
   List<IndexedStackChild> list = [

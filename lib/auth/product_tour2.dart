@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_portfolio/auth/LoginPage.dart';
-import 'package:my_first_portfolio/auth/ProductTour2.dart';
+import 'package:my_first_portfolio/auth/login_page.dart';
 
-class ProductTour1 extends StatelessWidget {
-  const ProductTour1({Key? key}) : super(key: key);
+class ProductTour2 extends StatelessWidget {
+  const ProductTour2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,29 +12,28 @@ class ProductTour1 extends StatelessWidget {
         children: [
           Column(
             children: [
-              Image.asset("assets/Image-Header.png"),
+              Image.asset("assets/Image-Header 16.36.48.png"),
               Column(
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(top: 30, left: 0),
-                        height: 4,
-                        width: 40,
-                        decoration: const BoxDecoration(
-                          color: Color(0xff4CBB5E),
-                          borderRadius: BorderRadius.all(Radius.circular(80)),
-                        ),
-                      ),
-                      Container(
-                        margin: const EdgeInsets.only(top: 30, left: 5),
+                        margin: const EdgeInsets.only(top: 30, left: 175),
                         height: 4,
                         width: 15,
                         decoration: BoxDecoration(
                           color: const Color(0xff4CBB5E).withOpacity(0.5),
                           borderRadius:
                               const BorderRadius.all(Radius.circular(80)),
+                        ),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.only(top: 30, left: 5),
+                        height: 4,
+                        width: 40,
+                        decoration: const BoxDecoration(
+                          color: Color(0xff4CBB5E),
+                          borderRadius: BorderRadius.all(Radius.circular(80)),
                         ),
                       ),
                       Container(
@@ -51,12 +49,12 @@ class ProductTour1 extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    width: 256,
+                    width: 226,
                     height: 71,
                     margin: const EdgeInsets.only(top: 20),
                     child: const Center(
                         child: Text(
-                      "Fresh groceries to your doorstep!",
+                      "Shop your daily necessary!",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           fontWeight: FontWeight.w700,
@@ -66,11 +64,11 @@ class ProductTour1 extends StatelessWidget {
                   ),
                   Container(
                     width: 280,
-                    height: 73,
+                    height: 43,
                     margin: const EdgeInsets.only(top: 20),
                     child: const Center(
                         child: Text(
-                      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+                      "Lorem ipsum dolor sit amet, consectetu adipisicing elit, sed do eiusmod.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           height: 1.6,
@@ -81,13 +79,14 @@ class ProductTour1 extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(
-                          MaterialPageRoute(builder: (_) => const LoginPage()));
+                      Navigator.of(context).pushAndRemoveUntil(
+                          MaterialPageRoute(builder: (_) => const LoginPage()),
+                          (route) => false);
                     },
                     child: Container(
                       width: 172,
                       height: 98,
-                      margin: const EdgeInsets.only(top: 60),
+                      margin: const EdgeInsets.only(top: 80),
                       decoration: BoxDecoration(
                           borderRadius:
                               const BorderRadius.all(Radius.circular(100)),

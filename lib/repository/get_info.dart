@@ -1,5 +1,7 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+// ignore: depend_on_referenced_packages
+import 'package:flutter/foundation.dart';
+// ignore: depend_on_referenced_packages
+import "package:http/http.dart" as http;
 import 'package:my_first_portfolio/model/food_model.dart';
 
 class GetInfo {
@@ -16,7 +18,9 @@ class GetInfo {
 
       return foodModelFromJson(res.body);
     } catch (e) {
-      print('error: $e');
+      if (kDebugMode) {
+        print('error: $e');
+      }
     }
     return null;
   }

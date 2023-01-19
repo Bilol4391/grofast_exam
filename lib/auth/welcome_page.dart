@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_portfolio/auth/ProductTour1.dart';
-import 'package:my_first_portfolio/auth/pageViewControl.dart';
-import 'package:my_first_portfolio/pages/HomePage.dart';
-import 'package:my_first_portfolio/pages/MainHomePage.dart';
+import 'package:my_first_portfolio/auth/page_view_control.dart';
+import 'package:my_first_portfolio/pages/mainpages/main_home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -22,15 +20,17 @@ class _WelcomePageState extends State<WelcomePage> {
     Future.delayed(const Duration(seconds: 4), () async {
       isLoading = false;
 
-      SharedPreferences _store = await SharedPreferences.getInstance();
-      String name = _store.getString('nickname') ?? '';
+      SharedPreferences store = await SharedPreferences.getInstance();
+      String name = store.getString('nickname') ?? '';
 
       if (name.isNotEmpty) {
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (_) => const MainHomePage()), (s) {
           return false;
         });
       } else {
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (_) => const PageViev()), (s) {
           return false;

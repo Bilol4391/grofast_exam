@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
 import 'package:my_first_portfolio/Widget/popular_products.dart';
-import 'package:my_first_portfolio/pages/Notification.dart';
+import 'package:my_first_portfolio/pages/notification_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,8 +17,8 @@ class _HomePageState extends State<HomePage> {
   String name = '';
 
   Future<void> getName() async {
-    SharedPreferences _local = await SharedPreferences.getInstance();
-    name = _local.getString('nickname') ?? 'salom';
+    SharedPreferences local = await SharedPreferences.getInstance();
+    name = local.getString('nickname') ?? 'salom';
     setState(() {});
   }
 

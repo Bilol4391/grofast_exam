@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_portfolio/pages/MainHomePage.dart';
-import 'package:my_first_portfolio/pages/SearchPage.dart';
+import 'package:my_first_portfolio/pages/mainpages/main_home_page.dart';
+import 'package:my_first_portfolio/pages/mainpages/search_page.dart';
 
 class CategoryHorizontal extends StatefulWidget {
    const CategoryHorizontal({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
-import 'package:my_first_portfolio/auth/NewPassword.dart';
+import 'package:my_first_portfolio/auth/new_password.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);

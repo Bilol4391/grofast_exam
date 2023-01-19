@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_portfolio/pages/CategoryExpandedHorizontal.dart';
-import 'package:my_first_portfolio/pages/SearchPage.dart';
+import 'package:my_first_portfolio/pages/category_horizontal.dart';
+import 'package:my_first_portfolio/pages/mainpages/search_page.dart';
 
 List listOfImage = ["assets/Rectangle 65.png", "assets/fruits.jpeg"];
 

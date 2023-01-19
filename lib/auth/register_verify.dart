@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_portfolio/auth/ForgotPassword.dart';
-import 'package:my_first_portfolio/pages/MainHomePage.dart';
-import 'package:my_first_portfolio/auth/TermCondition.dart';
+import 'package:my_first_portfolio/auth/forgot_password.dart';
+import 'package:my_first_portfolio/pages/mainpages/main_home_page.dart';
+import 'package:my_first_portfolio/auth/term_condition.dart';
 
 class RegisterVerify extends StatefulWidget {
   final String email;

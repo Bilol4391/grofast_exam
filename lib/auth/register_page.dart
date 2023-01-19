@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
-import 'package:my_first_portfolio/auth/ForgotPassword.dart';
-import 'package:my_first_portfolio/auth/LoginPage.dart';
-import 'package:my_first_portfolio/auth/RegisterVerify.dart';
+import 'package:my_first_portfolio/auth/forgot_password.dart';
+import 'package:my_first_portfolio/auth/login_page.dart';
+import 'package:my_first_portfolio/auth/register_verify.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Register extends StatefulWidget {
@@ -282,10 +282,11 @@ class _RegisterState extends State<Register> {
                   if (name.text.isNotEmpty &&
                       email.text.isNotEmpty &&
                       password.text.isNotEmpty) {
-                    SharedPreferences _store =
+                    SharedPreferences store =
                         await SharedPreferences.getInstance();
-                    _store.setString('nickname', name.text);
+                    store.setString('nickname', name.text);
 
+                    // ignore: use_build_context_synchronously
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => const RegisterVerify(

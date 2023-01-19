@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
-import 'package:my_first_portfolio/auth/ForgotPassword.dart';
-import 'package:my_first_portfolio/auth/Register.dart';
-import 'package:my_first_portfolio/auth/RegisterVerify.dart';
+import 'package:my_first_portfolio/auth/forgot_password.dart';
+import 'package:my_first_portfolio/auth/register_page.dart';
+import 'package:my_first_portfolio/auth/register_verify.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);

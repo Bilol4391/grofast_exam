@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_portfolio/auth/ProductTour1.dart';
-import 'package:my_first_portfolio/auth/ProductTour2.dart';
-import 'package:my_first_portfolio/auth/ProductTour3.dart';
+import 'package:my_first_portfolio/auth/product_tour1.dart';
+import 'package:my_first_portfolio/auth/product_tour2.dart';
+import 'package:my_first_portfolio/auth/product_tour3.dart';
 
 class PageViev extends StatefulWidget {
   const PageViev({super.key});

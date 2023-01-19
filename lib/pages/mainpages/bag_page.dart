@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_portfolio/pages/MainHomePage.dart';
 
 class BagPage extends StatefulWidget {
   const BagPage({Key? key}) : super(key: key);

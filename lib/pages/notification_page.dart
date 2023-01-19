@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_portfolio/Widget/PastCanceled.dart';
-import 'package:my_first_portfolio/Widget/pastContainer.dart';
-import 'package:my_first_portfolio/Widget/nowContainer.dart';
+import 'package:my_first_portfolio/Widget/past_canceled.dart';
+import 'package:my_first_portfolio/Widget/past_container.dart';
+import 'package:my_first_portfolio/Widget/now_container.dart';
 
 class NotificationPage extends StatefulWidget {
   const NotificationPage({Key? key}) : super(key: key);

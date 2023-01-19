@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/Widget/network_image.dart';
 import 'package:my_first_portfolio/model/food_model.dart';
-import 'package:my_first_portfolio/pages/addToBag.dart';
 
 class ProductPage extends StatefulWidget {
   final FoodModel? info;
@@ -174,9 +173,11 @@ class _ProductPageState extends State<ProductPage> {
               GestureDetector(
                 onTap: () {
                   if (buyCount != 0) {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (_) => const AddToBag()));
-                    setState(() {});
+                    showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container();
+                        });
                   }
                 },
                 child: Container(

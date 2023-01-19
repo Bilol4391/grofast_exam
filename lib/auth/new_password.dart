@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
-import 'package:my_first_portfolio/auth/Register.dart';
+import 'package:my_first_portfolio/auth/register_page.dart';
 
 class NewPassword extends StatefulWidget {
   const NewPassword({Key? key}) : super(key: key);

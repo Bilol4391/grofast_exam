@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_portfolio/Widget/network_image.dart';
 import 'package:my_first_portfolio/Widget/on_nfocused.dart';
 import 'package:my_first_portfolio/model/food_model.dart';
-import 'package:my_first_portfolio/pages/ProductPage.dart';
+import 'package:my_first_portfolio/pages/product_page.dart';
 
 import 'package:my_first_portfolio/repository/get_info.dart';
 
