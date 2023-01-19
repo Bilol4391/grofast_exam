@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_portfolio/auth/LoginPage.dart';
 import 'package:my_first_portfolio/auth/ProductTour2.dart';
 
 class ProductTour1 extends StatelessWidget {
@@ -80,8 +81,8 @@ class ProductTour1 extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => const ProductTour2()));
+                      Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => const LoginPage()));
                     },
                     child: Container(
                       width: 172,

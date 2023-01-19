@@ -242,7 +242,7 @@ class _RegisterVerifyState extends State<RegisterVerify> {
                                   Navigator.of(context).pushAndRemoveUntil(
                                       MaterialPageRoute(
                                           builder: (_) => const MainHomePage()),
-                                      (route) => true);
+                                      (route) => false);
                                 },
                                 child: Container(
                                   height: 70,

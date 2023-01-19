@@ -11,10 +11,18 @@ class PageViev extends StatefulWidget {
 }
 
 class _PageVievState extends State<PageViev> {
+  PageController pageController = PageController();
+
+  int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
+        controller: pageController,
+        onPageChanged: (value) {
+          index = value;
+        },
         children: const [
           ProductTour1(),
           ProductTour2(),

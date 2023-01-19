@@ -27,23 +27,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pop(context);
-                },
-                child: Container(
-                  margin: const EdgeInsets.only(top: 60, left: 20),
-                  height: 40,
-                  width: 60,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xff777777)),
-                      borderRadius: BorderRadius.circular(100)),
-                  child: const Icon(
-                    Icons.arrow_back_outlined,
-                    color: Color(0xff777777),
-                  ),
-                ),
-              ),
+              const SizedBox(height: 50),
               Container(
                 width: 250,
                 height: 70,
@@ -196,7 +180,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     )
                   : const SizedBox.shrink(),
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (_) => const ForgotPassword()));
@@ -212,7 +196,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
-              InkWell(
+              GestureDetector(
                 onTap: () {
                   if (email.text.isNotEmpty && password.text.isNotEmpty) {
                     Navigator.push(

@@ -56,6 +56,7 @@ class _SearchPageState extends State<SearchPage> {
                     width: 295,
                     margin: const EdgeInsets.only(top: 35, left: 20, right: 20),
                     child: TextFormField(
+                      maxLines: 1,
                       onChanged: (value) {
                         change = value;
                         setState(() {});

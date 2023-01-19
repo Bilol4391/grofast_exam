@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_portfolio/auth/ProductTour1.dart';
+import 'package:my_first_portfolio/auth/pageViewControl.dart';
 import 'package:my_first_portfolio/pages/HomePage.dart';
 import 'package:my_first_portfolio/pages/MainHomePage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,7 +32,7 @@ class _WelcomePageState extends State<WelcomePage> {
         });
       } else {
         Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (_) => const ProductTour1()), (s) {
+            MaterialPageRoute(builder: (_) => const PageViev()), (s) {
           return false;
         });
       }
